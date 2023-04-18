@@ -1,13 +1,17 @@
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
-public class ButtonsPane extends HBox {
+public class ButtonsPane extends VBox {
 
 	final int HEIGHT = 150;
 	final int WIDTH = 120;
+	final int SPACING = 10;
+
 	private ToggleGroup toggleGroup;
 	private RadioButton rbRed;
 	private RadioButton rbBlue;
@@ -20,7 +24,8 @@ public class ButtonsPane extends HBox {
 
 		setPrefHeight(HEIGHT);
 		setPrefWidth(WIDTH);
-
+		setSpacing(SPACING);
+		
 		MyMouseListener mouselistener = new MyMouseListener();
 
 		toggleGroup = new ToggleGroup();

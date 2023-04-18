@@ -30,5 +30,10 @@ public class DrawPane extends StackPane {
 	public void setColor(Color color) {
 		rec1.setFill(color);
 	}
+	
+	public void setScaling(Double value) {
+		 rec1.setWidth(RECTANGLE_SIZE * value);
+		 rec1.setHeight(RECTANGLE_SIZE * value); 
+	}
 
 }

@@ -12,7 +12,7 @@ public class ControlPane extends VBox {
 	private ButtonsPane buttonsPane;
 	private ListViewPane listViewPane;
 	private SliderPane sliderPane;
-	private boolean useButton = true;
+	private boolean useButton = false;
 	private DrawPane drawPane;
 
 	public ControlPane(DrawPane drawPane) {
@@ -21,7 +21,7 @@ public class ControlPane extends VBox {
 
 		buttonsPane = new ButtonsPane(this);
 		listViewPane = new ListViewPane(this);
-		sliderPane = new SliderPane();
+		sliderPane = new SliderPane(this);
 
 		setPrefWidth(WIDTH);
 		setPrefHeight(HEIGHT);
@@ -41,6 +41,11 @@ public class ControlPane extends VBox {
 		} catch (Exception e) {
 			drawPane.setColor(Color.WHITE);
 		}
+	}
+	
+	public void setScaling(Double value) {
+		drawPane.setScaling(value);
+		System.out.println(""+value);
 	}
 
 }
